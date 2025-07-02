@@ -1,4 +1,4 @@
-/*Estilo do body*/
+/* Estilo base do corpo da página */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -12,8 +12,8 @@ body {
     color: white;
 }
 
-/*Esitlo para as telas, initialscreen e secondscreen*/
-.screen{
+/* Estilo geral para as telas: initialscreen e secondscreen */
+.screen {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,41 +26,42 @@ body {
     box-sizing: border-box;
     padding: 1rem;
     background: linear-gradient(to right, #140236, #120231);
-   
- 
 }
-    /*z-index pra ordenar as camadas*/
-#initialscreen{
+
+/* Z-index para controlar sobreposição da primeira tela */
+#initialscreen {
     z-index: 10;
 }
 
-#secondscreen{
+/* Z-index menor para a segunda tela aparecer depois */
+#secondscreen {
     z-index: 0;
-    
 }
-.main-title{
+
+/* Título principal da tela inicial com animação */
+.main-title {
     font-size: 2.5rem;
-    line-height : 2.5rem;
+    line-height: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
     filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
     animation: pulse 2s cubic-bezier(0.4, 0, .6, 1) infinite;
-     margin-top: -15rem;
+    margin-top: -15rem;
 }
 
-/*Animação de pulse para o botão*/
-@keyframes pulse{
-    0%, 100%{
+/* Animação de "batimento" no botão */
+@keyframes pulse {
+    0%, 100% {
         transform: scale(1);
     }
-    50%{
+    50% {
         transform: scale(1.05);
     }
 }
 
-/*Estilos para o botão principal*/
-.main-button{
+/* Estilo do botão inicial */
+.main-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,118 +69,123 @@ body {
     background: transparent;
     line-height: 1.75rem;
     border-radius: 8888px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     border: 1px solid white;
-    transition: all 0.3s ease-in-out;    
+    transition: all 0.3s ease-in-out;
 }
 
-/*Hover para o botão*/
-.main-button:hover{
-    box-shadow:  0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+/* Efeito hover do botão */
+.main-button:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 8px 10px -6px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
     background-color: #1d0057;
     color: white;
     border: 1px solid #1e0257;
-    transition: all 0.3s ease-in-out;
 }
 
-/*Transição de tela*/
+/* Transição suave de opacidade entre telas */
 .fade-transition {
-    transition: opacity 1s ease-in-out; 
+    transition: opacity 1s ease-in-out;
 }
 
-/*Esconder os elemntos após a transição*/
+/* Esconde a tela atual com fade e bloqueia interação */
 .hidden-fade {
     opacity: 0;
     pointer-events: none;
 }
 
-/*Media query para responsividade em diferentes dispositivos*/
-@media (min-width: 768px) { 
+/* Responsividade para telas maiores */
+@media (min-width: 768px) {
     .main-title {
-        font-size: 3.75rem; 
+        font-size: 3.75rem;
         line-height: 1;
     }
     .main-button {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
         line-height: 2rem;
     }
 }
 
+/* Container do player de música (Spotify) */
 .music-player-container {
-    width: 80%; 
+    width: 80%;
     height: 80px;
-    max-width: 600px; 
+    max-width: 600px;
     border-radius: 10px;
-    box-shadow: 15px 15px 15px 10px rgba(0, 0, 0, .5); 
-    margin-top: rem;
+    box-shadow: 15px 15px 15px 10px rgba(0, 0, 0, .5);
+    margin-top: rem; /* OBS: ajuste aqui — "rem" está sem número */
     margin-bottom: 5rem;
-
 }
 
+/* Estilo do iframe do player */
 .music-player-container iframe {
-    width: 100%; 
+    width: 100%;
     height: 130px;
     border-radius: 10px;
 }
 
-.music-text{
-    font-size: -1.25rem;
+/* Texto abaixo do player */
+.music-text {
+    font-size: -1.25rem; /* OBS: valor negativo não é válido */
     line-height: 1.6;
     text-align: center;
     max-width: 700px;
-
     margin-top: -3rem;
     font-style: italic;
 }
 
+/* Container do slider de imagens */
 .slider-container {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  overflow-x: hidden;
-  position: relative;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    overflow-x: hidden;
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Imagens do slider */
 .slider-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
+/* Imagem ativa no carrossel */
 .slider-container img.active {
-  opacity: 1;
-  z-index: 1;
+    opacity: 1;
+    z-index: 1;
 }
 
+/* Contador de amor + data */
 .love-info {
-  margin-top: 1.5rem;
-  text-align: center;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
 }
 
+/* Texto romântico abaixo das fotos */
 .love-text {
-  max-width: 600px;
-  margin: 20px auto 40px auto;
-  color: #f57aef;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: center;
-  user-select: none;
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+    color: #f57aef;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    user-select: none;
 }
