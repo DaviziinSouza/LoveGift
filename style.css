@@ -1,0 +1,185 @@
+/*Estilo do body*/
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #140236, #120231);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/*Esitlo para as telas, initialscreen e secondscreen*/
+.screen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1rem;
+    background: linear-gradient(to right, #140236, #120231);
+   
+ 
+}
+    /*z-index pra ordenar as camadas*/
+#initialscreen{
+    z-index: 10;
+}
+
+#secondscreen{
+    z-index: 0;
+    
+}
+.main-title{
+    font-size: 2.5rem;
+    line-height : 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+    animation: pulse 2s cubic-bezier(0.4, 0, .6, 1) infinite;
+     margin-top: -15rem;
+}
+
+/*Animação de pulse para o botão*/
+@keyframes pulse{
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+}
+
+/*Estilos para o botão principal*/
+.main-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    line-height: 1.75rem;
+    border-radius: 8888px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;    
+}
+
+/*Hover para o botão*/
+.main-button:hover{
+    box-shadow:  0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    background-color: #1d0057;
+    color: white;
+    border: 1px solid #1e0257;
+    transition: all 0.3s ease-in-out;
+}
+
+/*Transição de tela*/
+.fade-transition {
+    transition: opacity 1s ease-in-out; 
+}
+
+/*Esconder os elemntos após a transição*/
+.hidden-fade {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*Media query para responsividade em diferentes dispositivos*/
+@media (min-width: 768px) { 
+    .main-title {
+        font-size: 3.75rem; 
+        line-height: 1;
+    }
+    .main-button {
+        font-size: 1.5rem; 
+        line-height: 2rem;
+    }
+}
+
+.music-player-container {
+    width: 80%; 
+    height: 80px;
+    max-width: 600px; 
+    border-radius: 10px;
+    box-shadow: 15px 15px 15px 10px rgba(0, 0, 0, .5); 
+    margin-top: rem;
+    margin-bottom: 5rem;
+
+}
+
+.music-player-container iframe {
+    width: 100%; 
+    height: 130px;
+    border-radius: 10px;
+}
+
+.music-text{
+    font-size: -1.25rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 700px;
+
+    margin-top: -3rem;
+    font-style: italic;
+}
+
+.slider-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  background-color: transparent; /* fundo invisível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;;
+}
+
+.slider-container img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.love-info {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.love-text {
+  max-width: 600px;
+  margin: 20px auto 40px auto;
+  color: #e470de;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  user-select: none;
+}
