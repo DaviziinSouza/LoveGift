@@ -160,6 +160,8 @@ body {
     left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    z-index: 0;
+    filter: none;
 }
 
 /* Imagem ativa no carrossel */
@@ -188,4 +190,16 @@ body {
     line-height: 1.6;
     text-align: center;
     user-select: none;
+}
+
+.love-footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4); /* discreto */
+  font-style: italic;
+  pointer-events: none; /* evita clique acidental */
+  user-select: none;
 }
